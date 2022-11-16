@@ -1,0 +1,19 @@
+.nav{
+    padding: 1rem;
+    border-bottom: 1px solid var(--button-border);
+}
+
+.nav .open{
+    background-color: var(--button-bg);
+    border: 1px solid var(--button-border);
+    color: white;
+    padding: .375rem;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease-in-out .25s;
+}
+
+.nav .open:hover{
+    background-color: rgb(55 48 163);
+}

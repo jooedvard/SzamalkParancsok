@@ -1,0 +1,15 @@
+@import url(navbar.css);
+@import url(menu.css);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+:root {
+    --button-border: rgb(209 213 219);
+    --button-bg: rgb(67 56 202);
+    --menutarget: rgb(241 245 249);
+}

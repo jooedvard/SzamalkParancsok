@@ -1,0 +1,89 @@
+.menu {
+    position: fixed;
+    left: -1000px;
+    transition: ease-in-out .3s;
+    height: 90vh;
+    overflow: scroll;
+    z-index: 10;
+    padding-bottom: 1rem;
+    border-right: 1px solid var(--button-border);
+}
+
+.menu .menu-head {
+    padding: 10px 10px 10px 15px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+}
+.menu .menu-head .menutitle{
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.menu-open {
+    transition: ease-in-out .3s;
+    left: 0px;
+}
+
+.menu .close {
+    height: 20px;
+    background-color: transparent;
+    border: none;
+}
+
+.menu svg {
+    height: 100%;
+    width: auto;
+}
+
+.menu .offmenu {
+    display: none;
+}
+.offmenu-active{
+    display: block !important;
+}
+.offmenu{
+    background-color: #2f2f2f;
+    color: white;
+}
+.offmenu p{
+    padding: 10px 50px 10px 15px;
+    border-bottom: 1px solid #9d9d9d;
+    transition: ease-in .25s;  
+    cursor: pointer;
+}
+.offmenu p:hover{
+    background-color: white;
+    color: black;
+}
+.menu .menutarget {
+    border-bottom: 1px solid #9d9d9d;
+    padding: 10px 50px 10px 15px;
+    transition: ease-in-out 0.25s;
+    cursor: pointer;
+    text-transform: capitalize;
+  
+}
+.menu .menutarget::after{
+
+    position: absolute;
+    right: 20px;
+    width: 0;
+    height: 0;
+    margin: auto;
+    margin-top: 10px;
+    content: "";
+    border-width: 6px 5px 0 5px;
+    border-style: solid;
+    border-color: #2f2f2f transparent transparent transparent;
+    -webkit-transition: transform 0.25s;
+    -moz-transition: transform 0.25s;
+    transition: transform 0.25s;
+}
+.menu .menutarget:hover{
+    background-color: var(--button-bg);
+    color: white;
+    
+}
+::-webkit-scrollbar {
+    display: none !important;
+}
