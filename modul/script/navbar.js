@@ -81,7 +81,7 @@ export default class Navbar extends Component {
             <p class="command" id="fontFamily">font-family: <span class="value">érték</span>;</p>
             <p class="command" id="fontStyle" inplayground=".playground-text">font-style: <span class="value">érték</span>;</p>
             <p class="command" inplayground=".playground-text" id="fontWeight">font-weight: <span class="value">érték</span>;</p>
-            <p class="command" inplayground=".playground-text">font-size: <span class="value">érték</span>;</p>
+            <p class="command" inplayground=".playground-text" id="fontSize">font-size: <span class="value">érték</span>;</p>
             <p class="command" inplayground=".playground-text">text-align: <span class="value">érték</span>;</p>
             <p class="command" inplayground=".playground-text">text-transform: <span class="value">érték</span>;</p>
             <p class="command" inplayground=".playground-text">text-decoration: <span class="value">érték</span>;</p>

@@ -7,6 +7,7 @@ export default class Commands {
         this.fontFamily = document.getElementById("fontFamily");
         this.fontStyle = document.getElementById("fontStyle");
         this.fontWeight = document.getElementById("fontWeight");
+        this.fontSize = document.getElementById("fontSize");
         this.events();
     }
 
@@ -15,6 +16,7 @@ export default class Commands {
         this.addOnClick(this.fontFamily, () => { new FontFamily("font-family"); Navbar.closeNavbar(); });
         this.addOnClick(this.fontStyle, () => { new FontStyle("font-style"); Navbar.closeNavbar(); });
         this.addOnClick(this.fontWeight, () => { new FontWeight("font-weight"); Navbar.closeNavbar(); });
+        this.addOnClick(this.fontSize, () => { new FontSize("font-size"); Navbar.closeNavbar(); });
     }
 
     addOnClick(elem, callback) {
@@ -50,8 +52,10 @@ class FontFamily extends Component {
         <h1 id="command-name">
             ${this.name}
         </h1>
+        <input type="text" name="" class="input" placeholder="Írj ide egy betűstílust pl.: Arial" id="font">
         <div id="container" class="command-container">
-            <input type="text" name="" class="input" placeholder="Írj ide egy betűstílust pl.: Arial" id="font">
+           
+            <p>Beállítja egy szöveg vagy elem betű családját!</p>
             <h1 class="playground-text" >Ez itt egy véletlenszerű cím</h1>
             <p class="playground-text" ">Ez itt egy véletlenszerű szöveg, hogy képesek legyünk tesztelni!
             </p>
@@ -88,12 +92,14 @@ class FontStyle extends Component {
         <h1 id="command-name">
             ${this.name}
         </h1>
+        <select id="fontstyle" class="input">
+        <option value="normal">normal</option>
+        <option value="italic">italic</option>
+        <option value="oblique">oblique</option>
+        </select>
         <div id="container" class="command-container">
-            <select id="fontstyle" class="input">
-            <option value="normal">normal</option>
-            <option value="italic">italic</option>
-            <option value="oblique">oblique</option>
-            </select>
+           
+            <p>Beállítja egy szöveg vagy elem betű stílusát!</p>
             <h1 class="playground-text" >Ez itt egy véletlenszerű cím</h1>
             <p class="playground-text" >Ez itt egy véletlenszerű szöveg, hogy képesek legyünk tesztelni!
             </p>
@@ -131,8 +137,7 @@ class FontWeight extends Component {
         <h1 id="command-name">
             ${this.name}
         </h1>
-        <div id="container" class="command-container">
-            <select id="fontweight" class="input">
+        <select id="fontweight" class="input">
             <option value="lighter">lighter</option>
             <option value="normal">normal</option>
             <option value="bolder">bolder</option>
@@ -147,6 +152,50 @@ class FontWeight extends Component {
             <option value="800">800</option>
             <option value="900">900</option>
             </select>
+        <div id="container" class="command-container">
+            
+            <p>Beállítja egy szöveg vagy elem betű vastagságát!</p>
+            <h1 class="playground-text" >Ez itt egy véletlenszerű cím</h1>
+            <p class="playground-text" >Ez itt egy véletlenszerű szöveg, hogy képesek legyünk tesztelni!
+            </p>
+            <span > Tudj meg többet: </span><a href="${this.link}" target="_blank">${this.link}</a>
+        </div>`;
+    }
+
+}
+
+class FontSize extends Component {
+
+    constructor(name) {
+        super();
+        this.name = name;
+        this.link = "https://developer.mozilla.org/en-US/docs/Web/CSS/font-size";
+        this.parent = document.getElementById("playground");
+        this.parent.innerHTML = "";
+        this.parent.insertAdjacentHTML('beforeend', this.render());
+        this.init();
+    }
+
+    init() {
+        this.tester = document.querySelectorAll(".playground-text");
+        this.input = document.getElementById("fontsize");
+        this.input.oninput = () => {
+            this.state.text = this.input.value;
+            this.tester.forEach(tester => {
+                tester.style.fontSize = this.state.text + "px";
+            })
+        }
+    }
+
+    render() {
+        return `
+        <h1 id="command-name">
+            ${this.name}
+        </h1>
+        <input type="number" id="fontsize" class="input">
+        <div id="container" class="command-container">
+          
+            <p>Beállítja egy szöveg vagy elem betű méretét! A méret mértékegysége eltérő lehet, jelenleg pixelben vizsgáljuk.</p>
             <h1 class="playground-text" >Ez itt egy véletlenszerű cím</h1>
             <p class="playground-text" >Ez itt egy véletlenszerű szöveg, hogy képesek legyünk tesztelni!
             </p>
