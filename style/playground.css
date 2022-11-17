@@ -1,0 +1,26 @@
+#playground {
+    margin: 2rem;
+    padding: 2rem;
+    border: 2px dashed gainsboro;
+    height: 85vh;
+    resize: both;
+    overflow: auto;
+}
+
+#command-name{
+    margin-bottom: 1rem;
+}
+
+#playground .input{
+    border: 1px solid rgb(148 163 184);
+    padding: .275rem;
+    margin-bottom: 1rem;
+    min-width: 300px;
+}
+
+.command-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: fit-content;
+    gap: 1rem;
+}

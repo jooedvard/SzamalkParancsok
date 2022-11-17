@@ -1,6 +1,7 @@
 .nav{
     padding: 1rem;
     border-bottom: 1px solid var(--button-border);
+    background: white;
 }
 
 .nav .open{
@@ -17,3 +18,4 @@
 .nav .open:hover{
     background-color: rgb(55 48 163);
 }
+

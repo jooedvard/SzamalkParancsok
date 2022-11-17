@@ -1,4 +1,5 @@
 import Component from "./component.js";
+import Commands from './command.js'
 
 export default class Navbar extends Component {
     constructor() {
@@ -19,12 +20,12 @@ export default class Navbar extends Component {
             this.close = document.getElementById("close");
             this.menutargets = document.querySelectorAll(".menutarget");
             this.offmenus = document.querySelectorAll(".offmenu");
-            console.log(this.offmenus)
             this.closeEvent();
             this.offMenuEvent();
             setTimeout(() => {
                 this.elem.classList.add("menu-open")
             }, .1);
+            new Commands();
         });
     }
 
@@ -39,6 +40,10 @@ export default class Navbar extends Component {
         });
     }
 
+    static closeNavbar(){
+        document.getElementById("menu").classList.remove("menu-open");
+    }
+
     offMenuEvent() {
         this.menutargets.forEach((menu, index) => {
             menu.addEventListener("click", () => {
@@ -49,8 +54,8 @@ export default class Navbar extends Component {
     }
 
     closeoffMenus() {
-        this.offmenus.forEach((menu,index) => {
-           
+        this.offmenus.forEach((menu, index) => {
+
             this.closeOffMenu(index);
         });
     }
@@ -64,8 +69,6 @@ export default class Navbar extends Component {
     }
 
 
-
-
     render() {
         return `<div class="menu" id="menu">
         <div class="menu-head">
@@ -75,22 +78,21 @@ export default class Navbar extends Component {
       </button></div>
         <div class="offmenu-target1 menutarget">font- és text- formázások, színek, háttérképek</div>
         <div class="offmenu1 offmenu">
-            <p class="command">font-family: <span class="value">érték</span>;</p>
-            <p class="command">font-style: <span class="value">érték</span>;</p>
-            <p class="command">font-style: <span class="value">érték</span>;</p>
-            <p class="command">font-weight: <span class="value">érték</span>;</p>
-            <p class="command">font-size: <span class="value">érték</span>;</p>
-            <p class="command">text-align: <span class="value">érték</span>;</p>
-            <p class="command">text-transform: <span class="value">érték</span>;</p>
-            <p class="command">text-decoration: <span class="value">érték</span>;</p>
-            <p class="command">text-indent: <span class="value">érték</span>;</p>
-            <p class="command">color: <span class="value">érték</span>;</p>
-            <p class="command">background-color: <span class="value">érték</span>;</p>
-            <p class="command">background: url(<span class="value">érték</span>);</p>
-            <p class="command">background-image: url(<span class="value">érték</span>);</p>
-            <p class="command">background-size: <span class="value">érték</span>;</p>
-            <p class="command">background-repeat: <span class="value">érték</span>;</p>
-            <p class="command">background-position: <span class="value">érték</span>;</p>
+            <p class="command" id="fontFamily">font-family: <span class="value">érték</span>;</p>
+            <p class="command" id="fontStyle" inplayground=".playground-text">font-style: <span class="value">érték</span>;</p>
+            <p class="command" inplayground=".playground-text" id="fontWeight">font-weight: <span class="value">érték</span>;</p>
+            <p class="command" inplayground=".playground-text">font-size: <span class="value">érték</span>;</p>
+            <p class="command" inplayground=".playground-text">text-align: <span class="value">érték</span>;</p>
+            <p class="command" inplayground=".playground-text">text-transform: <span class="value">érték</span>;</p>
+            <p class="command" inplayground=".playground-text">text-decoration: <span class="value">érték</span>;</p>
+            <p class="command" inplayground=".playground-text">text-indent: <span class="value">érték</span>;</p>
+            <p class="command" inplayground=".playground-text">color: <span class="value">érték</span>;</p>
+            <p class="command" inplayground=".playground-text">background-color: <span class="value">érték</span>;</p>
+            <p class="command" inplayground=".playground-text">background: url(<span class="value">érték</span>);</p>
+            <p class="command" inplayground=".playground-text">background-image: url(<span class="value">érték</span>);</p>
+            <p class="command" inplayground=".playground-text">background-size: <span class="value">érték</span>;</p>
+            <p class="command" inplayground=".playground-text">background-repeat: <span class="value">érték</span>;</p>
+            <p class="command" inplayground=".playground-text">background-position: <span class="value">érték</span>;</p>
         </div>
 
         <div class="offmenu-target2 menutarget">box model, border, padding, margin, Képek úsztatása a szöveg mellé: float</div>
